@@ -99,6 +99,22 @@ Temperatures are in deci-degrees Celsius (÷ 10 for °C). Distance is in millime
 
 Open [indexBLE03_0.9.1.html](indexBLE03_0.9.1.html) in a Web Bluetooth-capable browser (Chrome on Android/Desktop). The app connects to the ESP32 during the maintenance window and allows reading and writing all configuration parameters. A live status console displays log messages pushed from the device via BLE notifications.
 
+## Flashing Firmware
+
+A pre-built firmware binary is included in this repository at [`ORS_05/build/ORS_05.ino.merged.bin`](ORS_05/build/ORS_05.ino.merged.bin). This single file contains the bootloader, partition table, and application firmware — no Arduino IDE required.
+
+### Using a Web Flasher (e.g. ESPTool.spacehuhn.com)
+
+1. Open **ESPTool.spacehuhn.com** in **Chrome**.
+2. Connect the ESP32 board via USB and make sure the **power switch** is on.
+3. Click **Connect** and select the serial port in the browser popup.
+4. Select `ORS_05.ino.merged.bin` as the firmware file.
+5. Set the flash address to **`0x0`**.
+6. Start the flash process and wait for completion.
+7. Press the **Reset** button to boot into the new firmware.
+
+> **Troubleshooting — "Couldn't sync to ESP":** Check the power switch is on. Try unplugging USB, cycling the power switch, and reconnecting. Press the **Reset** button while the flasher is trying to connect. Also verify the USB cable supports data (not charge-only) and that a COM port appears in Device Manager (install CP210x or CH340 driver if not).
+
 ## Dependencies
 
 Arduino libraries (install via Library Manager or PlatformIO):

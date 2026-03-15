@@ -339,13 +339,32 @@ Jetzt kommt alles in die Box.
 
 ## Firmware auf den Sensor übertragen
 
+### Was wird benötigt?
+
+Die fertige Firmware liegt bereits im Repository unter **`ORS_05/build/ORS_05.ino.merged.bin`**. Diese eine Datei enthält bereits alles (Bootloader, Partitionstabelle und Firmware) — die Arduino IDE wird **nicht** benötigt.
+
+### Übertragung per Web-Flasher
+
 1. Die Seite **ESPTool.spacehuhn.com** aufrufen.
 
    > Die Übertragung geht nur mit einem **Chrome Browser**. Ohne Chrome gibt es diverse andere Lösungen im Internet, die jeweils für eine bestimmte Konfiguration helfen können.
 
-2. Auf der Seite die heruntergeladene **Binärdatei** anwählen.
-3. Als **Startadresse 0** eingeben.
-4. Den **Download starten** (Sensor per USB-Kabel am Computer angeschlossen).
+2. Den Sensor per **USB-Kabel** am Computer anschließen und den **Ein-/Aus-Schalter** am Board einschalten.
+3. Auf **„Connect"** klicken und im Browser-Popup den seriellen Port des Sensors auswählen.
+4. Die heruntergeladene **Binärdatei** (`ORS_05.ino.merged.bin`) anwählen.
+5. Als **Startadresse `0x0`** eingeben (Null).
+6. Den **Flash-Vorgang starten** und warten, bis er abgeschlossen ist.
+7. Nach dem Flashen die **Reset-Taste** kurz drücken, damit der Sensor mit der neuen Firmware startet.
+
+### Fehlerbehebung: „Couldn't sync to ESP. Try resetting."
+
+Dieser Fehler bedeutet, dass der ESP32 keine Verbindung zum Flasher aufbauen konnte. Mögliche Ursachen und Lösungen:
+
+1. **Ein-/Aus-Schalter prüfen** — Ist das Board eingeschaltet?
+2. **USB-Kabel abziehen**, Board aus- und wieder einschalten, USB-Kabel erneut anschließen, dann nochmal „Connect" klicken.
+3. **Reset-Taste drücken**, während der Flasher versucht sich zu verbinden.
+4. **Anderes USB-Kabel** versuchen — manche Kabel sind reine Ladekabel ohne Datenleitung.
+5. **USB-Treiber prüfen** — Im Geräte-Manager sollte ein COM-Port erscheinen, wenn das Board angeschlossen ist. Falls nicht, den CP210x- oder CH340-Treiber installieren.
 
 ---
 

@@ -23,6 +23,10 @@ The ORS (Open River Sensor) is a low-power, deep-sleep-capable sensor node built
 - **Persistent configuration** — all settings stored in ESP32 flash via the Preferences library
 - **Conditional compilation** — enable/disable MQTT, serial debug output, AT command logging, and sensor type via `#define` flags
 
+## Build Instructions (German)
+
+A complete step-by-step assembly and configuration guide (in German) is available in [Anleitung_ORS_Komplett.md](Anleitung_ORS_Komplett.md).
+
 ## Hardware
 
 | Component | Description |
@@ -74,8 +78,8 @@ Runtime settings (configurable via BLE or stored in flash):
 | Parameter | Default | Description |
 |---|---|---|
 | Sensor ID | `sensor_default` | Unique identifier, used as MQTT topic suffix (`ors/<sensor_id>`) |
-| MQTT User | `ors-client-test1` | MQTT broker username |
-| MQTT Password | `test1` | MQTT broker password |
+| MQTT User | `ors-test` | MQTT broker username |
+| MQTT Password | `testpw` | MQTT broker password |
 | APN | auto-detected | Cellular APN; auto-detected from carrier name if not set |
 | Sleep Time | 60 min | Deep sleep interval between measurements |
 
@@ -136,7 +140,7 @@ Arduino libraries (install via Library Manager or PlatformIO):
 
 ## License
 
-This project does not yet specify a license. Please add one if you intend to distribute it.
+This project is licensed under the **GNU General Public License v3.0 (GPLv3)**. See [LICENSE](LICENSE) for the full license text.
 
 ## Firmware Version
 

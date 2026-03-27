@@ -57,6 +57,12 @@ Die Konfiguration erfolgt komfortabel per **Bluetooth Low Energy (BLE)** über e
 | Kategorie | Komponente | Details | Bezugsquelle |
 |---|---|---|---|
 | **Mikrocontroller** | LILYGO T-SIM7000G | ESP32 Board mit 2G/NB-IoT & GPS, inkl. Antenne | [Amazon](https://www.amazon.de/LILYGO-Development-ESP32-WROVER-B-Wireless-T-SIM7000G/dp/B099RQ7BSR) |
+
+![LILYGO T-SIM7000G Kit-Inhalt](images/lilygo_kit_inhalt.png)
+
+> ⚠️ **ACHTUNG — LTE-Antenne nicht abreißen!**
+> Im Lieferumfang liegt ein flaches, silbernes Rechteck bei, das wie eine Verpackung oder ein Aufkleber aussieht. **Das ist die LTE-Antenne!** Sie wird später an das Board angeschlossen und ist für die Mobilfunkverbindung zwingend erforderlich. **Bitte NICHT wegwerfen oder abreißen.** Ohne diese Antenne kann der Sendeverstärker des Moduls beim Einschalten sofort durchbrennen.
+
 | **Sensoren** | DS18B20 Temp-Sensor | Wasserdicht, Edelstahl, 5 m Kabel | Amazon |
 | **Sensoren (Distanz)** | DFRobot A01NYUB | Ultraschall, wasserdicht (Option 1) | Botland |
 | **Sensoren (Distanz)** | Maxbotix HRXL-MaxSonar (MB7369) | Wetterbeständig, robust (Option 2) | RobotShop |
@@ -76,6 +82,8 @@ Die Konfiguration erfolgt komfortabel per **Bluetooth Low Energy (BLE)** über e
 In diesem Schritt verbaust du die mechanischen Schnittstellen in das Gehäuse, um die Elektronik später vor Regen und Staub zu schützen.
 
 ### 1.1 Bohrungen
+
+![Gehäuse-Bohrplan mit Maßen](images/gehaeuse_bohrplan.png)
 
 - Nutze den **Stufenbohrer**, um die Öffnungen für die M12-Verschraubungen (seitlich) und den Ultraschallsensor (mittig) auf das exakte Maß zu bringen.
 - Entferne Kunststoffspäne gründlich, damit die Dichtungen später plan aufliegen.
@@ -104,6 +112,8 @@ In diesem Schritt verbaust du die mechanischen Schnittstellen in das Gehäuse, u
 - Führe das Kabel durch die **rechte** Verschraubung in das Gehäuse.
 - **Wichtig:** Bevor du es mit dem beim LILYGO mitgelieferten Anschlusskabel für das Energiemanagement verlötest, stelle sicher, dass die Kabel **Plus (+)** und **Minus (-)** korrekt verbinden.
 
+![Gehäuse mit eingebautem Sensor und durchgeführten Kabeln](images/gehaeuse_montage_komplett.png)
+
 ### 1.5 Abdichtung (Finalisierung)
 
 1. Drehe die äußeren Kappen der Kabelverschraubungen (Überwurfmuttern) im Uhrzeigersinn fest.
@@ -116,6 +126,8 @@ In diesem Schritt verbaust du die mechanischen Schnittstellen in das Gehäuse, u
 Es stehen zwei Ultraschallsensor-Optionen zur Verfügung. Wähle **eine** der beiden Varianten.
 
 ### Option A: DFRobot A01NYUB
+
+![Pin-Diagramm Ultraschallsensor A01NYUB](images/pindiagramm_a01nyub.png)
 
 #### Kabel identifizieren
 
@@ -154,9 +166,13 @@ Vergewissere dich, dass du die Adern Weiß und Gelb richtig zugeordnet hast.
 
 > Alternativ zum DFRobot A01NYUB (Schritt 2, Option A).
 
+![Maxbotix MB7369 Einbau](images/maxbotix_einbau.jpeg)
+
 Im Gegensatz zu den günstigeren Sensoren hat der Maxbotix **keinen festen Kabelbaum**. Du musst die Kabel an die Löt-Augen am Sensor anbringen.
 
 **Wichtig:** Schau auf die Rückseite der Sensor-Platine. Die Pins sind dort klein mit Zahlen von 1 bis 7 beschriftet. Wir benötigen nur die **Pins 2, 4, 6 und 7**.
+
+![Pin-Diagramm Maxbotix MB7369 Verkabelung](images/pindiagramm_maxbotix.png)
 
 #### Pin-Zuordnung Maxbotix
 
@@ -189,11 +205,17 @@ Im Gegensatz zu den günstigeren Sensoren hat der Maxbotix **keinen festen Kabel
 - Prüfe, ob sich beim Löten am Sensor kleine **Zinnbrücken** zwischen den engen Pins gebildet haben (besonders zwischen Pin 6 und 7 wäre das fatal).
 - **Isoliere** die Lötstellen am Sensor (falls offen) mit Schrumpfschlauch oder Heißkleber, damit sie nicht korrodieren.
 
+![Maxbotix Sensor-Abmessungen](images/maxbotix_dimensionen.png)
+
+![Maxbotix Messbereich](images/maxbotix_messbereich.png)
+
 > Datenblatt: https://maxbotix.com/pages/hrxl-maxsonar-wr-datasheet
 
 ---
 
 ## Schritt 3: Temperatursonde DS18B20 anschließen
+
+![Pin-Diagramm DS18B20 Temperatursonde](images/pindiagramm_ds18b20.png)
 
 ### 3.1 Kabel & Widerstand vorbereiten
 
@@ -271,6 +293,8 @@ Stecke den JST-Stecker fest in die dafür vorgesehene **Solar-Buchse** auf dem B
 ---
 
 ## Schritt 5: Antenne, SIM & Inbetriebnahme
+
+![LILYGO T-SIM7000G Board — Beschriftung der Anschlüsse](images/lilygo_board_beschriftung.png)
 
 > **Dieser Schritt ist kritisch. Bitte halte die Reihenfolge genau ein, um das Board nicht zu beschädigen.**
 

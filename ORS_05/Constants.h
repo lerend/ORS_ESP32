@@ -28,8 +28,8 @@
 #define ONE_WIRE_BUS              (21)
 
 #ifdef SENSOR_SERIAL
-  #define SENSOR_RX_PIN           (33)
-  #define SENSOR_TX_PIN           (32)
+  #define SENSOR_RX_PIN           (32)
+  #define SENSOR_TX_PIN           (33)
   #define SENSOR_POWER            (15) 
   #define SENSOR_BAUDRATE         (9600)
 #else
